@@ -17,7 +17,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Inter for body, Michroma for sleeker brand -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Michroma&display=swap" rel="stylesheet">
 
   <link rel="icon" href="assets/logo-square.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
@@ -33,7 +34,7 @@
         <img src="assets/logo-square.png" width="48" height="48" alt="SR Performance logo" class="logo">
         <div class="wordmark">
           <strong>SR <span>PERFORMANCE</span></strong>
-          <small>Styling and Power</small>
+          <!-- removed small tagline -->
         </div>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -65,10 +66,7 @@
 
         <!-- Right image panel -->
         <div class="hero-media">
-          <picture>
-            <source srcset="assets/bmw.jpg">
-            <img src="assets/bmw.jpg" alt="Blue BMW in studio" loading="eager" decoding="async">
-          </picture>
+          <img src="assets/bmw.jpg" width="1600" height="1100" alt="Blue BMW in studio" loading="eager" decoding="async">
         </div>
       </div>
     </section>
@@ -135,7 +133,7 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (same images, faster) -->
     <section id="gallery" class="section gallery">
       <div class="wrap">
         <header class="section-head">
@@ -144,11 +142,41 @@
         </header>
 
         <div class="gallery-grid">
-          <figure><img src="assets/bmw.jpg" alt="BMW with SR Performance kit" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/kit-2.jpg" alt="Remapping kit in front of car" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/engine.jpg" alt="ECU bench setup in engine bay" loading="lazy" decoding="async"></figure>
-          <figure><img src="assets/flyer.png" alt="SR Performance service flyer" loading="lazy" decoding="async"></figure>
+          <figure>
+            <img src="assets/bmw.jpg"
+                 alt="BMW with SR Performance kit"
+                 width="1200" height="900"
+                 loading="lazy" decoding="async"
+                 sizes="(max-width:540px) 50vw, (max-width:900px) 33vw, 20vw" />
+          </figure>
+          <figure>
+            <img src="assets/kit-1.jpg"
+                 alt="Autotuner kit with SR leaflets"
+                 width="1200" height="900"
+                 loading="lazy" decoding="async"
+                 sizes="(max-width:540px) 50vw, (max-width:900px) 33vw, 20vw" />
+          </figure>
+          <figure>
+            <img src="assets/kit-2.jpg"
+                 alt="Remapping kit in front of car"
+                 width="1200" height="900"
+                 loading="lazy" decoding="async"
+                 sizes="(max-width:540px) 50vw, (max-width:900px) 33vw, 20vw" />
+          </figure>
+          <figure>
+            <img src="assets/engine.jpg"
+                 alt="ECU bench setup in engine bay"
+                 width="1200" height="900"
+                 loading="lazy" decoding="async"
+                 sizes="(max-width:540px) 50vw, (max-width:900px) 33vw, 20vw" />
+          </figure>
+          <figure>
+            <img src="assets/flyer.png"
+                 alt="SR Performance service flyer"
+                 width="1200" height="900"
+                 loading="lazy" decoding="async"
+                 sizes="(max-width:540px) 50vw, (max-width:900px) 33vw, 20vw" />
+          </figure>
         </div>
       </div>
     </section>
@@ -167,32 +195,26 @@
               <label for="name">Full name</label>
               <input id="name" name="name" type="text" autocomplete="name" required>
             </div>
-
             <div class="field">
               <label for="email">Email</label>
               <input id="email" name="email" type="email" autocomplete="email" required>
             </div>
-
             <div class="field">
               <label for="phone">Phone</label>
               <input id="phone" name="phone" type="tel" autocomplete="tel" required>
             </div>
-
             <div class="field">
               <label for="reg">Vehicle reg</label>
               <input id="reg" name="vehicle_reg" type="text" required>
             </div>
-
             <div class="field">
               <label for="model">Make / Model / Engine</label>
               <input id="model" name="model_engine" type="text">
             </div>
-
             <div class="field">
               <label for="location">Location (Exeter/Devon)</label>
               <input id="location" name="location" type="text">
             </div>
-
             <div class="field field-full">
               <label for="message">What would you like done?</label>
               <textarea id="message" name="message" rows="5" placeholder="Stage 1/2, gearbox tune, diagnostics, etc."></textarea>
@@ -214,7 +236,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-row">
-      <p>© <span id="year">2025</span> SR Performance — Styling &amp; Power • Exeter</p>
+      <p>© <span id="year">2025</span> SR Performance • Exeter</p>
       <a class="to-top" href="#top" aria-label="Back to top">↑ Back to top</a>
     </div>
   </footer>
