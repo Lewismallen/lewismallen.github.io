@@ -5,35 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SR Performance | Mobile ECU Remapping & Mechanics in Exeter</title>
   <meta name="description" content="SR Performance — mobile ECU remapping and vehicle diagnostics across Exeter and Devon. Stage 1 & 2 maps, gearbox tuning, DPF/EGR solutions and more. Fast, friendly and fully mobile.">
-  <link rel="canonical" href="https://lewismallen.github.io/">
-  <meta property="og:url" content="https://lewismallen.github.io/">
+  <link rel="canonical" href="https://lewismallen.github.io/" />
   <meta name="theme-color" content="#0b0b0b" />
+
   <link rel="icon" href="assets/logo-square.png" type="image/png" />
-  <link rel="apple-touch-icon" href="assets/logo-apple-touch.png">
+  <!-- use existing square icon for Apple touch too -->
+  <link rel="apple-touch-icon" href="assets/logo-square.png">
 
   <!-- Fonts (Inter for body, Michroma for wordmark) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Michroma&display=swap" rel="stylesheet">
 
-  <!-- Preload hero for faster LCP -->
-  <link rel="preload" as="image"
-        href="assets/bmw.jpg"
-        imagesrcset="assets/bmw.avif 1600w, assets/bmw.webp 1600w, assets/bmw.jpg 1600w"
-        imagesizes="(max-width:980px) 100vw, 45vw">
+  <!-- Preload hero (JPG only; matches your /assets) -->
+  <link rel="preload" as="image" href="assets/bmw.jpg">
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph / Twitter (point at real files/URL for your user site) -->
   <meta property="og:title" content="SR Performance | Mobile ECU Remapping & Mechanics in Exeter">
   <meta property="og:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more.">
-  <meta property="og:image" content="assets/bmw-og.jpg">
+  <meta property="og:image" content="assets/bmw.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://<your-gh-username>.github.io/<repo>/">
+  <meta property="og:url" content="https://lewismallen.github.io/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SR Performance | Mobile ECU Remapping & Mechanics in Exeter">
   <meta name="twitter:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more.">
-  <meta name="twitter:image" content="assets/bmw-og.jpg">
+  <meta name="twitter:image" content="assets/bmw.jpg">
 
   <!-- LocalBusiness schema -->
   <script type="application/ld+json">
@@ -43,8 +41,8 @@
     "name":"SR Performance",
     "description":"Mobile ECU remapping, gearbox tuning, diagnostics across Exeter & Devon.",
     "areaServed":"Exeter, Devon",
-    "image":"https://<your-gh-username>.github.io/<repo>/assets/bmw-og.jpg",
-    "url":"https://<your-gh-username>.github.io/<repo>/",
+    "image":"https://lewismallen.github.io/assets/bmw.jpg",
+    "url":"https://lewismallen.github.io/",
     "telephone":"+44 7470 866512",
     "address":{"@type":"PostalAddress","addressLocality":"Exeter","addressRegion":"Devon","addressCountry":"GB"}
   }
@@ -93,15 +91,11 @@
           </ul>
         </div>
 
-        <!-- Right image panel -->
+        <!-- Right image panel (JPG only) -->
         <div class="hero-media">
-          <picture>
-            <source type="image/avif" srcset="assets/bmw.avif">
-            <source type="image/webp" srcset="assets/bmw.webp">
-            <img src="assets/bmw.jpg" width="1600" height="1100" alt="Blue BMW in studio"
-                 loading="eager" decoding="async"
-                 sizes="(max-width:980px) 100vw, 45vw">
-          </picture>
+          <img src="assets/bmw.jpg" width="1600" height="1100" alt="Blue BMW in studio"
+               loading="eager" decoding="async"
+               sizes="(max-width:980px) 100vw, 45vw">
         </div>
       </div>
     </section>
@@ -168,7 +162,7 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (JPG/PNG only) -->
     <section id="gallery" class="section gallery">
       <div class="wrap">
         <header class="section-head">
@@ -179,61 +173,41 @@
         <div class="gallery-grid">
           <figure>
             <a href="#img1">
-              <picture>
-                <source type="image/avif" srcset="assets/bmw-800.avif 800w, assets/bmw-1200.avif 1200w">
-                <source type="image/webp" srcset="assets/bmw-800.webp 800w, assets/bmw-1200.webp 1200w">
-                <img src="assets/bmw.jpg" alt="BMW with SR Performance kit"
-                     width="1200" height="900" loading="lazy" decoding="async"
-                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
-              </picture>
+              <img src="assets/bmw.jpg" alt="BMW with SR Performance kit"
+                   width="1200" height="900" loading="lazy" decoding="async"
+                   sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
             </a>
           </figure>
 
           <figure>
             <a href="#img2">
-              <picture>
-                <source type="image/avif" srcset="assets/kit-1-800.avif 800w, assets/kit-1-1200.avif 1200w">
-                <source type="image/webp" srcset="assets/kit-1-800.webp 800w, assets/kit-1-1200.webp 1200w">
-                <img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets"
-                     width="1200" height="900" loading="lazy" decoding="async"
-                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
-              </picture>
+              <img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets"
+                   width="1200" height="900" loading="lazy" decoding="async"
+                   sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
             </a>
           </figure>
 
           <figure>
             <a href="#img3">
-              <picture>
-                <source type="image/avif" srcset="assets/kit-2-800.avif 800w, assets/kit-2-1200.avif 1200w">
-                <source type="image/webp" srcset="assets/kit-2-800.webp 800w, assets/kit-2-1200.webp 1200w">
-                <img src="assets/kit-2.jpg" alt="Remapping kit in front of car"
-                     width="1200" height="900" loading="lazy" decoding="async"
-                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
-              </picture>
+              <img src="assets/kit-2.jpg" alt="Remapping kit in front of car"
+                   width="1200" height="900" loading="lazy" decoding="async"
+                   sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
             </a>
           </figure>
 
           <figure>
             <a href="#img4">
-              <picture>
-                <source type="image/avif" srcset="assets/engine-800.avif 800w, assets/engine-1200.avif 1200w">
-                <source type="image/webp" srcset="assets/engine-800.webp 800w, assets/engine-1200.webp 1200w">
-                <img src="assets/engine.jpg" alt="ECU bench setup in engine bay"
-                     width="1200" height="900" loading="lazy" decoding="async"
-                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
-              </picture>
+              <img src="assets/engine.jpg" alt="ECU bench setup in engine bay"
+                   width="1200" height="900" loading="lazy" decoding="async"
+                   sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
             </a>
           </figure>
 
           <figure>
             <a href="#img5">
-              <picture>
-                <source type="image/avif" srcset="assets/flyer-800.avif 800w, assets/flyer-1200.avif 1200w">
-                <source type="image/webp" srcset="assets/flyer-800.webp 800w, assets/flyer-1200.webp 1200w">
-                <img src="assets/flyer.png" alt="SR Performance service flyer"
-                     width="1200" height="900" loading="lazy" decoding="async"
-                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
-              </picture>
+              <img src="assets/flyer.png" alt="SR Performance service flyer"
+                   width="1200" height="900" loading="lazy" decoding="async"
+                   sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
             </a>
           </figure>
         </div>
@@ -296,7 +270,7 @@
             <p class="small">Or call <a href="tel:+447470866512">07470 866 512</a></p>
           </div>
 
-          <!-- live status for a11y (no JS required; Formspree redirects) -->
+          <!-- live status (no JS; for screen readers) -->
           <p class="small" aria-live="polite" id="form-status"></p>
         </form>
       </div>
