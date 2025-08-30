@@ -9,18 +9,17 @@
   <meta name="theme-color" content="#0b0b0b" />
 
   <link rel="icon" href="assets/logo-square.png" type="image/png" />
-  <!-- use existing square icon for Apple touch too -->
   <link rel="apple-touch-icon" href="assets/logo-square.png">
 
-  <!-- Fonts (Inter for body, Michroma for wordmark) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Michroma&display=swap" rel="stylesheet">
 
-  <!-- Preload hero (JPG only; matches your /assets) -->
+  <!-- Preload hero -->
   <link rel="preload" as="image" href="assets/bmw.jpg">
 
-  <!-- Open Graph / Twitter (point at real files/URL for your user site) -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="SR Performance | Mobile ECU Remapping & Mechanics in Exeter">
   <meta property="og:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more.">
   <meta property="og:image" content="assets/bmw.jpg">
@@ -52,10 +51,8 @@
 </head>
 
 <body>
-    <div id="page-top"></div>
+  <div id="page-top"></div>
   <a class="skip-link" href="#main">Skip to content</a>
-  <a class="skip-link" href="#main">Skip to content</a>
-  
 
   <!-- HEADER -->
   <header class="site-header" id="top" role="banner">
@@ -93,8 +90,6 @@
             <li>Exeter-based • Fully mobile</li>
           </ul>
         </div>
-
-        <!-- Right image panel (JPG only) -->
         <div class="hero-media">
           <img src="assets/bmw.jpg" width="1600" height="1100" alt="Blue BMW in studio"
                loading="eager" decoding="async"
@@ -165,7 +160,7 @@
       </div>
     </section>
 
-    <!-- GALLERY (JPG/PNG only) -->
+    <!-- GALLERY -->
     <section id="gallery" class="section gallery">
       <div class="wrap">
         <header class="section-head">
@@ -232,7 +227,8 @@
           <p class="sub">Send your reg and details — we’ll reply with gains, options and availability.</p>
         </header>
 
-        <form class="card form" action="https://formspree.io/f/mnnbprol" method="POST">
+        <!-- FORM (AJAX to Formspree; no redirect) -->
+        <form class="card form" id="enquiry-form">
           <div class="form-grid">
             <div class="field">
               <label for="name">Full name</label>
@@ -264,7 +260,7 @@
             </div>
           </div>
 
-          <!-- Formspree helpers -->
+          <!-- Formspree helpers (still sent via JS) -->
           <input type="hidden" name="_subject" value="New SR Performance enquiry">
           <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
 
@@ -273,9 +269,15 @@
             <p class="small">Or call <a href="tel:+447470866512">07470 866 512</a></p>
           </div>
 
-          <!-- live status (no JS; for screen readers) -->
+          <!-- live status (no JS needed for SR; left for a11y) -->
           <p class="small" aria-live="polite" id="form-status"></p>
         </form>
+
+        <!-- THANK YOU BLOCK (shown after successful submit) -->
+        <div id="form-thanks" class="card form" style="display:none; text-align:center; padding:2rem;">
+          <h3>Thanks for your enquiry!</h3>
+          <p>We’ll get back to you shortly.</p>
+        </div>
       </div>
     </section>
 
@@ -316,18 +318,49 @@
     </script>
   </main>
 
- <footer class="site-footer">
-   <div class="wrap footer-row">
-     <p>© <span id="year">2025</span> SR Performance • Exeter</p>
-     <a class="to-top" href="#page-top" aria-label="Back to top">↑ Back to top</a>
-   </div>
- </footer>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p>© <span id="year">2025</span> SR Performance • Exeter</p>
+      <a class="to-top" href="#page-top" aria-label="Back to top">↑ Back to top</a>
+    </div>
+  </footer>
 
-
-  <!-- Optional mobile call bar -->
+  <!-- Call bar (CSS hides on desktop; shows ≤720px) -->
   <div class="callbar" role="complementary" aria-label="Quick call bar">
     <a href="tel:+447470866512" class="btn btn-primary">Call 07470 866 512</a>
     <a href="#enquiry" class="btn btn-white">Enquire</a>
   </div>
+
+  <!-- Formspree AJAX handler -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("enquiry-form");
+    const thanks = document.getElementById("form-thanks");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const endpoint = "https://formspree.io/f/mnnbprol";
+
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+        if (res.ok) {
+          form.style.display = "none";
+          thanks.style.display = "block";
+          // Optional: scroll to the thanks message
+          thanks.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          alert("Something went wrong — please try again later.");
+        }
+      } catch (err) {
+        alert("Network error — please try again later.");
+      }
+    });
+  });
+  </script>
 </body>
 </html>
