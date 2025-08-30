@@ -276,3 +276,14 @@ input:focus, textarea:focus{
   .callbar .btn{flex:1;text-align:center}
   body{padding-bottom:68px}
 }
+
+.callbar .btn {
+  flex:1;
+  display:flex;              /* make the button a flexbox */
+  align-items:center;        /* vertical centering */
+  justify-content:center;    /* horizontal centering */
+  text-align:center;
+  padding:12px;              /* consistent padding */
+  line-height:1.2;           /* tighter line height */
+}
+
