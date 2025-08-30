@@ -11,7 +11,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="SR Performance | Styling & Power" />
   <meta property="og:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more." />
-  <meta property="og:image" content="assets/banner.png" />
+  <meta property="og:image" content="assets/bmw.jpg" />
   <meta property="og:type" content="website" />
 
   <!-- Fonts -->
@@ -38,24 +38,24 @@
       <nav class="nav">
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
-        <a href="#contact" class="btn btn-outline">Get a Quote</a>
+        <a href="#enquiry" class="btn btn-outline">Enquire</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO (updated banner image) -->
     <section class="hero" aria-label="SR Performance hero">
       <picture>
-        <source srcset="assets/banner.png" />
-        <img src="assets/banner.png" alt="SR Performance banner" class="hero-bg" />
+        <source srcset="assets/bmw.jpg" />
+        <img src="assets/bmw.jpg" alt="BMW at detailing studio with SR kit" class="hero-bg" />
       </picture>
       <div class="wrap hero-inner">
         <h1>Mobile ECU Remapping & Mechanics — Exeter & Devon</h1>
         <p class="lead">More power, sharper response, and better drivability. We come to you — home or workplace.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+447470866512">Call 07470 866 512</a>
-          <a class="btn btn-white" href="mailto:sr.performance@outlook.com">Email Us</a>
+          <a class="btn btn-white" href="#enquiry">Enquire online</a>
         </div>
         <ul class="usp">
           <li>Stage 1 & 2 ECU maps</li>
@@ -109,10 +109,10 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (renamed heading) -->
     <section id="gallery" class="section gallery">
       <div class="wrap">
-        <h2>Recent work</h2>
+        <h2>Gallery</h2>
         <div class="gallery-grid">
           <figure><img src="assets/bmw.jpg" alt="BMW with SR Performance kit" /></figure>
           <figure><img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets" /></figure>
@@ -123,27 +123,50 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <div class="wrap contact-grid">
-        <div class="contact-card">
-          <h2>Contact &amp; quotes</h2>
-          <p>Tell us your reg and engine for an instant view on gains and options.</p>
-          <ul class="contact-list">
-            <li><strong>Phone:</strong> <a href="tel:+447470866512">07470 866 512</a></li>
-            <li><strong>Email:</strong> <a href="mailto:sr.performance@outlook.com">sr.performance@outlook.com</a></li>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/srperformanceofficial" rel="noopener">@srperformanceofficial</a></li>
-            <li><strong>Base:</strong> Exeter • Mobile across Devon</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="tel:+447470866512">Call now</a>
-            <a class="btn btn-outline" href="mailto:sr.performance@outlook.com?subject=Quote%20request%20-%20SR%20Performance&body=Vehicle%20reg:%0AEngine/Model:%0ADescription:%0ALocation:%0A">Get a quote by email</a>
+    <!-- ENQUIRY FORM -->
+    <section id="enquiry" class="section enquiry">
+      <div class="wrap">
+        <h2>Quick enquiry</h2>
+        <p class="lead">Send your reg and details below — we’ll reply with gains, options and availability.</p>
+        <form class="card form" action="https://formspree.io/f/mnnbprol" method="POST">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="reg">Vehicle reg</label>
+              <input id="reg" name="vehicle_reg" type="text" required />
+            </div>
+            <div class="field">
+              <label for="model">Make / Model / Engine</label>
+              <input id="model" name="model_engine" type="text" />
+            </div>
+            <div class="field">
+              <label for="location">Location (Exeter/Devon)</label>
+              <input id="location" name="location" type="text" />
+            </div>
+            <div class="field field-full">
+              <label for="message">What would you like done?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Stage 1/2, gearbox tune, diagnostics, etc."></textarea>
+            </div>
           </div>
-        </div>
-        <aside class="contact-aside">
-          <img src="assets/logo-square.png" alt="SR logo" />
-          <p class="small">Fully mobile service. Evening &amp; weekend bookings available.</p>
-        </aside>
+          <!-- Formspree helpers -->
+          <input type="hidden" name="_subject" value="New SR Performance enquiry">
+          <input type="text" name="_gotcha" style="display:none">
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send enquiry</button>
+            <p class="small">Or call <a href="tel:+447470866512">07470 866 512</a></p>
+          </div>
+        </form>
       </div>
     </section>
   </main>
@@ -153,7 +176,6 @@
       <p>© <span id="year">2025</span> SR Performance — Styling &amp; Power • Exeter</p>
       <a class="to-top" href="#top" aria-label="Back to top">↑ Back to top</a>
     </div>
-    <!-- No scripts required for GitHub Pages -->
   </footer>
 </body>
 </html>
