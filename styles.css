@@ -178,3 +178,27 @@ input:focus, textarea:focus{
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
 }
+/* Lightbox overlay (CSS-only) */
+.lightbox {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.lightbox:target {display:flex}
+.lightbox img {
+  max-width:92%;
+  max-height:92%;
+  border-radius:12px;
+  box-shadow:0 12px 40px rgba(0,0,0,.65);
+}
+.lightbox .close {
+  position:absolute;top:20px;right:28px;
+  color:#fff;font-size:2.5rem;font-weight:bold;
+  text-decoration:none;line-height:1;
+}
+.lightbox .close:hover {color:#ff4c4c}
