@@ -66,13 +66,20 @@ body{
 .gallery-grid figure{margin:0}
 .gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
 
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;align-items:start}
-.contact-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-.contact-list{margin:0 0 1rem;padding:0;list-style:none}
-.contact-list li{margin:.25rem 0}
-.contact-aside{display:flex;flex-direction:column;gap:12px;align-items:center;background:#0f0f0f;border:1px solid var(--line);padding:20px;border-radius:var(--radius)}
-.contact-aside img{height:88px;width:auto}
+/* Contact / Enquiry */
+.enquiry .lead{color:var(--ink-2)}
+.form{background:var(--card)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field-full{grid-column:1/-1}
+label{font-weight:600}
+input, textarea, select{
+  width:100%;background:#0f0f0f;color:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:12px;outline:none
+}
+input:focus, textarea:focus{border-color:#333}
+.form-actions{display:flex;gap:12px;align-items:center;margin-top:12px}
+.small{color:var(--ink-2);font-size:.9rem}
 
 /* Footer */
 .site-footer{border-top:1px solid var(--line);background:#0d0d0d}
@@ -84,7 +91,9 @@ body{
 @media (max-width:900px){
   .grid{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:800px){
+  .form-grid{grid-template-columns:1fr}
 }
 @media (max-width:540px){
   .nav{display:none}
