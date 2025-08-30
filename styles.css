@@ -202,3 +202,17 @@ input:focus, textarea:focus{
   text-decoration:none;line-height:1;
 }
 .lightbox .close:hover {color:#ff4c4c}
+
+/* Compact nav button style */
+.nav .btn-outline {
+  padding:6px 14px;       /* smaller */
+  border-radius:8px;      /* not fully round */
+  font-weight:600;
+  font-size:0.95rem;
+  border:1px solid #444;
+  box-shadow:none;        /* remove heavy shadow */
+  background:#141414;
+}
+.nav .btn-outline:hover {
+  background:#1e1e1e;
+}
