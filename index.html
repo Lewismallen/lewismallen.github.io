@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SR Performance | Mobile ECU Remapping & Mechanics in Exeter</title>
-  <meta name="description" content="SR Performance — mobile ECU remapping and vehicle diagnostics across Exeter and Devon. Stage 1 & 2 maps, gearbox tuning, DPF/EGR solutions and more. Fast, friendly and fully mobile." />
+  <meta name="description" content="SR Performance — mobile ECU remapping and vehicle diagnostics across Exeter and Devon. Stage 1 & 2 maps, gearbox tuning, DPF/EGR solutions and more. Fast, friendly and fully mobile.">
   <link rel="canonical" href="https://<your-gh-username>.github.io/<repo>/" />
-  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" content="#0b0b0b" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="SR Performance | Styling & Power" />
@@ -22,20 +22,21 @@
   <link rel="icon" href="assets/logo-square.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
+  <!-- HEADER -->
+  <header class="site-header" id="top" role="banner">
     <div class="wrap header-row">
       <a class="brand" href="#top" aria-label="SR Performance home">
-        <img src="assets/logo-square.png" alt="SR Performance logo" class="logo" />
+        <img src="assets/logo-square.png" width="48" height="48" alt="SR Performance logo" class="logo">
         <div class="wordmark">
           <strong>SR <span>PERFORMANCE</span></strong>
           <small>Styling and Power</small>
         </div>
       </a>
-
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
         <a href="#enquiry" class="btn btn-outline">Enquire</a>
@@ -44,124 +45,164 @@
   </header>
 
   <main id="main">
-    <!-- HERO (updated banner image) -->
+    <!-- HERO (split layout) -->
     <section class="hero" aria-label="SR Performance hero">
-      <picture>
-        <source srcset="assets/bmw.jpg" />
-        <img src="assets/bmw.jpg" alt="BMW at detailing studio with SR kit" class="hero-bg" />
-      </picture>
-      <div class="wrap hero-inner">
-        <h1>Mobile ECU Remapping & Mechanics — Exeter & Devon</h1>
-        <p class="lead">More power, sharper response, and better drivability. We come to you — home or workplace.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="tel:+447470866512">Call 07470 866 512</a>
-          <a class="btn btn-white" href="#enquiry">Enquire online</a>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Mobile ECU Remapping & Mechanics — Exeter & Devon</h1>
+          <p class="lead">More power, sharper response and better drivability. We come to you — home or workplace.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+447470866512">Call 07470 866 512</a>
+            <a class="btn btn-white" href="#enquiry">Enquire online</a>
+          </div>
+          <ul class="usp">
+            <li>Stage 1 &amp; 2 ECU maps</li>
+            <li>Gearbox tuning</li>
+            <li>Diagnostics &amp; mobile mechanics</li>
+            <li>Exeter-based • Fully mobile</li>
+          </ul>
         </div>
-        <ul class="usp">
-          <li>Stage 1 & 2 ECU maps</li>
-          <li>Gearbox tuning</li>
-          <li>Diagnostics & mobile mechanics</li>
-          <li>Exeter-based • Fully mobile</li>
-        </ul>
+
+        <!-- Right image panel -->
+        <div class="hero-media">
+          <picture>
+            <source srcset="assets/bmw.jpg">
+            <img src="assets/bmw.jpg" alt="Blue BMW in studio" loading="eager" decoding="async">
+          </picture>
+        </div>
       </div>
     </section>
 
     <!-- SERVICES -->
     <section id="services" class="section services">
       <div class="wrap">
-        <h2>What we do</h2>
-        <div class="grid">
+        <header class="section-head">
+          <h2>What we do</h2>
+          <p class="sub">Straightforward packages with clear gains. If you’re unsure, ask — we’ll advise the safest option for your car.</p>
+        </header>
+
+        <div class="grid grid-3">
           <article class="card">
             <h3>Stage 1 Remap</h3>
             <ul>
               <li>Improved MPG</li>
               <li>Increased BHP &amp; torque</li>
-              <li>No physical mods required</li>
-              <li>Smoother, safer drivability</li>
+              <li>No physical mods needed</li>
+              <li>Smoother drivability</li>
             </ul>
           </article>
+
           <article class="card">
             <h3>Stage 2 Remap</h3>
             <ul>
-              <li>Further gains in BHP &amp; torque</li>
+              <li>Further BHP &amp; torque gains</li>
               <li>For cars with supporting hardware</li>
-              <li>Max performance for enthusiasts</li>
+              <li>For enthusiasts seeking max performance</li>
             </ul>
           </article>
+
           <article class="card">
             <h3>Gearbox Tuning</h3>
             <ul>
               <li>Faster, smarter shifting</li>
-              <li>Torque &amp; launch adjustments</li>
+              <li>Torque &amp; launch control options</li>
               <li>Get the most from your auto</li>
             </ul>
           </article>
+
           <article class="card">
-            <h3>Extras &amp; Options</h3>
+            <h3>Diagnostics &amp; Coding</h3>
+            <ul>
+              <li>Full fault scanning</li>
+              <li>Live data &amp; coding</li>
+              <li>ECU bench where required</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Emissions Options*</h3>
             <ul>
               <li>AdBlue / EGR / DPF solutions</li>
               <li>Pops &amp; bangs, overrun, Vmax</li>
               <li>Hardcut limiter (where suitable)</li>
-              <li>Full diagnostics &amp; coding</li>
             </ul>
+          </article>
+
+          <article class="card note">
+            <p class="small">*For off-road/track use only where required by law. We’ll advise what’s appropriate for your vehicle.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY (renamed heading) -->
+    <!-- GALLERY -->
     <section id="gallery" class="section gallery">
       <div class="wrap">
-        <h2>Gallery</h2>
+        <header class="section-head">
+          <h2>Gallery</h2>
+          <p class="sub">A few recent setups and kit shots.</p>
+        </header>
+
         <div class="gallery-grid">
-          <figure><img src="assets/bmw.jpg" alt="BMW with SR Performance kit" loading="lazy" decoding="async" /></figure>
-          <figure><img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets" loading="lazy" decoding="async" /></figure>
-          <figure><img src="assets/kit-2.jpg" alt="Remapping kit in front of car" loading="lazy" decoding="async" /></figure>
-          <figure><img src="assets/engine.jpg" alt="ECU bench setup in engine bay" loading="lazy" decoding="async" /></figure>
-          <figure><img src="assets/flyer.png" alt="SR Performance service flyer" loading="lazy" decoding="async" /></figure>
+          <figure><img src="assets/bmw.jpg" alt="BMW with SR Performance kit" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/kit-2.jpg" alt="Remapping kit in front of car" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/engine.jpg" alt="ECU bench setup in engine bay" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/flyer.png" alt="SR Performance service flyer" loading="lazy" decoding="async"></figure>
         </div>
       </div>
     </section>
 
-    <!-- ENQUIRY FORM -->
+    <!-- ENQUIRY -->
     <section id="enquiry" class="section enquiry">
       <div class="wrap">
-        <h2>Quick enquiry</h2>
-        <p class="lead">Send your reg and details below — we’ll reply with gains, options and availability.</p>
+        <header class="section-head">
+          <h2>Quick enquiry</h2>
+          <p class="sub">Send your reg and details — we’ll reply with gains, options and availability.</p>
+        </header>
+
         <form class="card form" action="https://formspree.io/f/mnnbprol" method="POST">
           <div class="form-grid">
             <div class="field">
               <label for="name">Full name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
+              <input id="name" name="name" type="text" autocomplete="name" required>
             </div>
+
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
+              <input id="email" name="email" type="email" autocomplete="email" required>
             </div>
+
             <div class="field">
               <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required>
             </div>
+
             <div class="field">
               <label for="reg">Vehicle reg</label>
-              <input id="reg" name="vehicle_reg" type="text" required />
+              <input id="reg" name="vehicle_reg" type="text" required>
             </div>
+
             <div class="field">
               <label for="model">Make / Model / Engine</label>
-              <input id="model" name="model_engine" type="text" />
+              <input id="model" name="model_engine" type="text">
             </div>
+
             <div class="field">
               <label for="location">Location (Exeter/Devon)</label>
-              <input id="location" name="location" type="text" />
+              <input id="location" name="location" type="text">
             </div>
+
             <div class="field field-full">
               <label for="message">What would you like done?</label>
               <textarea id="message" name="message" rows="5" placeholder="Stage 1/2, gearbox tune, diagnostics, etc."></textarea>
             </div>
           </div>
+
           <!-- Formspree helpers -->
           <input type="hidden" name="_subject" value="New SR Performance enquiry">
           <input type="text" name="_gotcha" style="display:none">
+
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">Send enquiry</button>
             <p class="small">Or call <a href="tel:+447470866512">07470 866 512</a></p>
