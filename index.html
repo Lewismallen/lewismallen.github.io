@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Michroma&display=swap" rel="stylesheet">
 
-  <!-- Preload hero -->
-  <link rel="preload" as="image" href="assets/bmw.jpg">
+  <!-- Preload hero for LCP -->
+  <link rel="preload" as="image" href="assets/bmw.jpg" imagesrcset="assets/bmw.jpg">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="SR Performance | Mobile ECU Remapping & Mechanics in Exeter">
@@ -27,6 +27,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lewismallen.github.io/">
+  <meta property="og:site_name" content="SR Performance">
+  <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SR Performance | Mobile ECU Remapping & Mechanics in Exeter">
   <meta name="twitter:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more.">
@@ -67,7 +69,7 @@
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
-        <a href="#enquiry" class="btn btn-outline">Enquire</a>
+        <a href="#enquiry" class="btn btn-outline nav-enquire">Enquire</a>
       </nav>
     </div>
   </header>
@@ -83,7 +85,7 @@
             <a class="btn btn-primary" href="tel:+447470866512">Call 07470 866 512</a>
             <a class="btn btn-white" href="#enquiry">Enquire online</a>
           </div>
-          <ul class="usp">
+          <ul class="usp" aria-label="Key benefits">
             <li>Stage 1 &amp; 2 ECU maps</li>
             <li>Gearbox tuning</li>
             <li>Diagnostics &amp; mobile mechanics</li>
@@ -91,8 +93,9 @@
           </ul>
         </div>
         <div class="hero-media">
-          <img src="assets/bmw.jpg" width="1600" height="1100" alt="Blue BMW in studio"
-               loading="eager" decoding="async"
+          <img src="assets/bmw.jpg"
+               width="1600" height="1100" alt="Blue BMW in studio"
+               loading="eager" fetchpriority="high" decoding="async"
                sizes="(max-width:980px) 100vw, 45vw">
         </div>
       </div>
@@ -212,7 +215,7 @@
       </div>
     </section>
 
-    <!-- Lightbox overlays (CSS-only) -->
+    <!-- Lightbox overlays -->
     <div class="lightbox" id="img1"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/bmw.jpg" alt="BMW with SR Performance kit"></div>
     <div class="lightbox" id="img2"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets"></div>
     <div class="lightbox" id="img3"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/kit-2.jpg" alt="Remapping kit in front of car"></div>
@@ -228,7 +231,7 @@
         </header>
 
         <!-- FORM (AJAX to Formspree; no redirect) -->
-        <form class="card form" id="enquiry-form">
+        <form class="card form" id="enquiry-form" novalidate>
           <div class="form-grid">
             <div class="field">
               <label for="name">Full name</label>
@@ -260,7 +263,7 @@
             </div>
           </div>
 
-          <!-- Formspree helpers (still sent via JS) -->
+          <!-- Formspree helpers -->
           <input type="hidden" name="_subject" value="New SR Performance enquiry">
           <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
 
@@ -269,12 +272,11 @@
             <p class="small">Or call <a href="tel:+447470866512">07470 866 512</a></p>
           </div>
 
-          <!-- live status (no JS needed for SR; left for a11y) -->
           <p class="small" aria-live="polite" id="form-status"></p>
         </form>
 
         <!-- THANK YOU BLOCK (shown after successful submit) -->
-        <div id="form-thanks" class="card form" style="display:none; text-align:center; padding:2rem;">
+        <div id="form-thanks" class="card form" hidden style="text-align:center; padding:2rem;">
           <h3>Thanks for your enquiry!</h3>
           <p>We’ll get back to you shortly.</p>
         </div>
@@ -331,33 +333,39 @@
     <a href="#enquiry" class="btn btn-white">Enquire</a>
   </div>
 
-  <!-- Formspree AJAX handler -->
+  <!-- Form + lightbox helpers -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("enquiry-form");
     const thanks = document.getElementById("form-thanks");
+    const status = document.getElementById("form-status");
 
-    form.addEventListener("submit", async function (e) {
+    // AJAX submit (Formspree)
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      status.textContent = "Sending…";
       const data = new FormData(form);
       const endpoint = "https://formspree.io/f/mnnbprol";
 
       try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          body: data,
-          headers: { "Accept": "application/json" }
-        });
+        const res = await fetch(endpoint, { method: "POST", body: data, headers: { "Accept": "application/json" }});
         if (res.ok) {
-          form.style.display = "none";
-          thanks.style.display = "block";
-          // Optional: scroll to the thanks message
+          form.hidden = true;
+          thanks.hidden = false;
+          status.textContent = "";
           thanks.scrollIntoView({ behavior: "smooth", block: "start" });
         } else {
-          alert("Something went wrong — please try again later.");
+          status.textContent = "Something went wrong — please try again.";
         }
-      } catch (err) {
-        alert("Network error — please try again later.");
+      } catch {
+        status.textContent = "Network error — please try again later.";
+      }
+    });
+
+    // Close lightbox with Escape
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && location.hash.startsWith("#img")) {
+        location.hash = "#gallery";
       }
     });
   });
