@@ -34,7 +34,7 @@ body{
 }
 .header-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink)}
-.logo{height:60px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
+.logo{height:80px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
 
 /* Sleeker brand type (Michroma) */
 .wordmark strong{font-family:"Michroma", system-ui, sans-serif; font-weight:400; letter-spacing:.06em}
