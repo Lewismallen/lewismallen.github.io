@@ -5,22 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SR Performance | Mobile ECU Remapping & Mechanics in Exeter</title>
   <meta name="description" content="SR Performance — mobile ECU remapping and vehicle diagnostics across Exeter and Devon. Stage 1 & 2 maps, gearbox tuning, DPF/EGR solutions and more. Fast, friendly and fully mobile.">
-  <link rel="canonical" href="https://<your-gh-username>.github.io/<repo>/" />
+  <link rel="canonical" href="https://lewismallen.github.io/">
+  <meta property="og:url" content="https://lewismallen.github.io/">
   <meta name="theme-color" content="#0b0b0b" />
+  <link rel="icon" href="assets/logo-square.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/logo-apple-touch.png">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="SR Performance | Styling & Power" />
-  <meta property="og:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more." />
-  <meta property="og:image" content="assets/bmw.jpg" />
-  <meta property="og:type" content="website" />
-
-  <!-- Fonts -->
+  <!-- Fonts (Inter for body, Michroma for wordmark) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Inter for body, Michroma for sleeker brand -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Michroma&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="assets/logo-square.png" type="image/png" />
+  <!-- Preload hero for faster LCP -->
+  <link rel="preload" as="image"
+        href="assets/bmw.jpg"
+        imagesrcset="assets/bmw.avif 1600w, assets/bmw.webp 1600w, assets/bmw.jpg 1600w"
+        imagesizes="(max-width:980px) 100vw, 45vw">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="SR Performance | Mobile ECU Remapping & Mechanics in Exeter">
+  <meta property="og:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more.">
+  <meta property="og:image" content="assets/bmw-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://<your-gh-username>.github.io/<repo>/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SR Performance | Mobile ECU Remapping & Mechanics in Exeter">
+  <meta name="twitter:description" content="Mobile ECU remapping and diagnostics across Exeter & Devon. Stage 1/2, gearbox tuning, DPF/EGR and more.">
+  <meta name="twitter:image" content="assets/bmw-og.jpg">
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AutoRepair",
+    "name":"SR Performance",
+    "description":"Mobile ECU remapping, gearbox tuning, diagnostics across Exeter & Devon.",
+    "areaServed":"Exeter, Devon",
+    "image":"https://<your-gh-username>.github.io/<repo>/assets/bmw-og.jpg",
+    "url":"https://<your-gh-username>.github.io/<repo>/",
+    "telephone":"+44 7470 866512",
+    "address":{"@type":"PostalAddress","addressLocality":"Exeter","addressRegion":"Devon","addressCountry":"GB"}
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -34,19 +63,19 @@
         <img src="assets/logo-square.png" width="48" height="48" alt="SR Performance logo" class="logo">
         <div class="wordmark">
           <strong>SR <span>PERFORMANCE</span></strong>
-          <!-- removed small tagline -->
         </div>
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
         <a href="#enquiry" class="btn btn-outline">Enquire</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO (split layout) -->
+    <!-- HERO -->
     <section class="hero" aria-label="SR Performance hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
@@ -66,7 +95,13 @@
 
         <!-- Right image panel -->
         <div class="hero-media">
-          <img src="assets/bmw.jpg" width="1600" height="1100" alt="Blue BMW in studio" loading="eager" decoding="async">
+          <picture>
+            <source type="image/avif" srcset="assets/bmw.avif">
+            <source type="image/webp" srcset="assets/bmw.webp">
+            <img src="assets/bmw.jpg" width="1600" height="1100" alt="Blue BMW in studio"
+                 loading="eager" decoding="async"
+                 sizes="(max-width:980px) 100vw, 45vw">
+          </picture>
         </div>
       </div>
     </section>
@@ -133,64 +168,84 @@
       </div>
     </section>
 
-   <!-- GALLERY -->
-<section id="gallery" class="section gallery">
-  <div class="wrap">
-    <header class="section-head">
-      <h2>Gallery</h2>
-      <p class="sub">A few recent setups and kit shots.</p>
-    </header>
+    <!-- GALLERY -->
+    <section id="gallery" class="section gallery">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>Gallery</h2>
+          <p class="sub">A few recent setups and kit shots.</p>
+        </header>
 
-    <div class="gallery-grid">
-      <figure>
-        <a href="#img1"><img src="assets/bmw.jpg" alt="BMW with SR Performance kit"
-             width="1200" height="900" loading="lazy" decoding="async"></a>
-      </figure>
-      <figure>
-        <a href="#img2"><img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets"
-             width="1200" height="900" loading="lazy" decoding="async"></a>
-      </figure>
-      <figure>
-        <a href="#img3"><img src="assets/kit-2.jpg" alt="Remapping kit in front of car"
-             width="1200" height="900" loading="lazy" decoding="async"></a>
-      </figure>
-      <figure>
-        <a href="#img4"><img src="assets/engine.jpg" alt="ECU bench setup in engine bay"
-             width="1200" height="900" loading="lazy" decoding="async"></a>
-      </figure>
-      <figure>
-        <a href="#img5"><img src="assets/flyer.png" alt="SR Performance service flyer"
-             width="1200" height="900" loading="lazy" decoding="async"></a>
-      </figure>
-    </div>
-  </div>
-</section>
+        <div class="gallery-grid">
+          <figure>
+            <a href="#img1">
+              <picture>
+                <source type="image/avif" srcset="assets/bmw-800.avif 800w, assets/bmw-1200.avif 1200w">
+                <source type="image/webp" srcset="assets/bmw-800.webp 800w, assets/bmw-1200.webp 1200w">
+                <img src="assets/bmw.jpg" alt="BMW with SR Performance kit"
+                     width="1200" height="900" loading="lazy" decoding="async"
+                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
+              </picture>
+            </a>
+          </figure>
 
-<!-- Lightbox overlays -->
-<div class="lightbox" id="img1">
-  <a href="#gallery" class="close">×</a>
-  <img src="assets/bmw.jpg" alt="BMW with SR Performance kit">
-</div>
+          <figure>
+            <a href="#img2">
+              <picture>
+                <source type="image/avif" srcset="assets/kit-1-800.avif 800w, assets/kit-1-1200.avif 1200w">
+                <source type="image/webp" srcset="assets/kit-1-800.webp 800w, assets/kit-1-1200.webp 1200w">
+                <img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets"
+                     width="1200" height="900" loading="lazy" decoding="async"
+                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
+              </picture>
+            </a>
+          </figure>
 
-<div class="lightbox" id="img2">
-  <a href="#gallery" class="close">×</a>
-  <img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets">
-</div>
+          <figure>
+            <a href="#img3">
+              <picture>
+                <source type="image/avif" srcset="assets/kit-2-800.avif 800w, assets/kit-2-1200.avif 1200w">
+                <source type="image/webp" srcset="assets/kit-2-800.webp 800w, assets/kit-2-1200.webp 1200w">
+                <img src="assets/kit-2.jpg" alt="Remapping kit in front of car"
+                     width="1200" height="900" loading="lazy" decoding="async"
+                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
+              </picture>
+            </a>
+          </figure>
 
-<div class="lightbox" id="img3">
-  <a href="#gallery" class="close">×</a>
-  <img src="assets/kit-2.jpg" alt="Remapping kit in front of car">
-</div>
+          <figure>
+            <a href="#img4">
+              <picture>
+                <source type="image/avif" srcset="assets/engine-800.avif 800w, assets/engine-1200.avif 1200w">
+                <source type="image/webp" srcset="assets/engine-800.webp 800w, assets/engine-1200.webp 1200w">
+                <img src="assets/engine.jpg" alt="ECU bench setup in engine bay"
+                     width="1200" height="900" loading="lazy" decoding="async"
+                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
+              </picture>
+            </a>
+          </figure>
 
-<div class="lightbox" id="img4">
-  <a href="#gallery" class="close">×</a>
-  <img src="assets/engine.jpg" alt="ECU bench setup in engine bay">
-</div>
+          <figure>
+            <a href="#img5">
+              <picture>
+                <source type="image/avif" srcset="assets/flyer-800.avif 800w, assets/flyer-1200.avif 1200w">
+                <source type="image/webp" srcset="assets/flyer-800.webp 800w, assets/flyer-1200.webp 1200w">
+                <img src="assets/flyer.png" alt="SR Performance service flyer"
+                     width="1200" height="900" loading="lazy" decoding="async"
+                     sizes="(max-width:900px) 50vw, (max-width:540px) 45vw, 20vw">
+              </picture>
+            </a>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-<div class="lightbox" id="img5">
-  <a href="#gallery" class="close">×</a>
-  <img src="assets/flyer.png" alt="SR Performance service flyer">
-</div>
+    <!-- Lightbox overlays (CSS-only) -->
+    <div class="lightbox" id="img1"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/bmw.jpg" alt="BMW with SR Performance kit"></div>
+    <div class="lightbox" id="img2"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/kit-1.jpg" alt="Autotuner kit with SR leaflets"></div>
+    <div class="lightbox" id="img3"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/kit-2.jpg" alt="Remapping kit in front of car"></div>
+    <div class="lightbox" id="img4"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/engine.jpg" alt="ECU bench setup in engine bay"></div>
+    <div class="lightbox" id="img5"><a href="#gallery" class="close" aria-label="Close image">×</a><img src="assets/flyer.png" alt="SR Performance service flyer"></div>
 
     <!-- ENQUIRY -->
     <section id="enquiry" class="section enquiry">
@@ -212,19 +267,19 @@
             </div>
             <div class="field">
               <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
             </div>
             <div class="field">
               <label for="reg">Vehicle reg</label>
-              <input id="reg" name="vehicle_reg" type="text" required>
+              <input id="reg" name="vehicle_reg" type="text" required pattern="[A-Za-z0-9 ]{1,10}" title="UK registration (letters/numbers)">
             </div>
             <div class="field">
               <label for="model">Make / Model / Engine</label>
-              <input id="model" name="model_engine" type="text">
+              <input id="model" name="model_engine" type="text" autocomplete="off">
             </div>
             <div class="field">
               <label for="location">Location (Exeter/Devon)</label>
-              <input id="location" name="location" type="text">
+              <input id="location" name="location" type="text" autocomplete="off">
             </div>
             <div class="field field-full">
               <label for="message">What would you like done?</label>
@@ -234,15 +289,54 @@
 
           <!-- Formspree helpers -->
           <input type="hidden" name="_subject" value="New SR Performance enquiry">
-          <input type="text" name="_gotcha" style="display:none">
+          <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">Send enquiry</button>
             <p class="small">Or call <a href="tel:+447470866512">07470 866 512</a></p>
           </div>
+
+          <!-- live status for a11y (no JS required; Formspree redirects) -->
+          <p class="small" aria-live="polite" id="form-status"></p>
         </form>
       </div>
     </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" aria-label="Remapping FAQs">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>FAQ</h2>
+          <p class="sub">Quick answers to popular questions.</p>
+        </header>
+        <details class="card"><summary><strong>Is a Stage 1 safe for a stock car?</strong></summary>
+          <p>Yes—maps are calibrated within safe tolerances for healthy vehicles; we scan first.</p>
+        </details>
+        <details class="card"><summary><strong>Do you come to my home or work?</strong></summary>
+          <p>Yes, we’re fully mobile across Exeter & Devon.</p>
+        </details>
+        <details class="card"><summary><strong>Will my insurance be affected?</strong></summary>
+          <p>Performance changes can be classed as modifications—check and inform your insurer.</p>
+        </details>
+        <details class="card"><summary><strong>Emissions options legalities?</strong></summary>
+          <p>Some options are for off-road/track use only. We’ll advise what’s appropriate.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- FAQ schema -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Is a Stage 1 safe for a stock car?","acceptedAnswer":{"@type":"Answer","text":"Yes—maps are calibrated within safe tolerances for healthy vehicles; we scan first."}},
+        {"@type":"Question","name":"Do you come to my home or work?","acceptedAnswer":{"@type":"Answer","text":"Yes, we’re fully mobile across Exeter & Devon."}},
+        {"@type":"Question","name":"Will my insurance be affected?","acceptedAnswer":{"@type":"Answer","text":"Performance changes can be classed as modifications—check and inform your insurer."}},
+        {"@type":"Question","name":"Emissions options legalities?","acceptedAnswer":{"@type":"Answer","text":"Some options are for off-road/track use only. We’ll advise what’s appropriate."}}
+      ]
+    }
+    </script>
   </main>
 
   <footer class="site-footer">
@@ -251,5 +345,11 @@
       <a class="to-top" href="#top" aria-label="Back to top">↑ Back to top</a>
     </div>
   </footer>
+
+  <!-- Optional mobile call bar -->
+  <div class="callbar" role="complementary" aria-label="Quick call bar">
+    <a href="tel:+447470866512" class="btn btn-primary">Call 07470 866 512</a>
+    <a href="#enquiry" class="btn btn-white">Enquire</a>
+  </div>
 </body>
 </html>
