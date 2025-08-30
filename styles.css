@@ -1,4 +1,4 @@
-/* ===== SR Performance — clean split layout, no JS ===== */
+/* ===== SR Performance — clean split layout ===== */
 :root{
   --brand:#e10600;
   --ink:#ffffff;
@@ -11,6 +11,8 @@
   --radius:18px;
   --pill:999px;
   --focus:#ffd166;
+  --header-h:80px;   /* adjust if you change header height */
+  --logo-h:80px;     /* make logo bigger/smaller here */
 }
 
 *{box-sizing:border-box}
@@ -34,15 +36,10 @@ body{
 }
 .header-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ink)}
-.logo {
-  height:80px;   /* or 100px etc */
-  width:auto;
-  display:block;
-  filter:drop-shadow(0 2px 8px rgba(0,0,0,.35));
-}
+.logo{height:var(--logo-h);width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
 
 /* Sleeker brand type (Michroma) */
-.wordmark strong{font-family:"Michroma", system-ui, sans-serif; font-weight:400; letter-spacing:.06em}
+.wordmark strong{font-family:"Michroma", system-ui, sans-serif;font-weight:400;letter-spacing:.06em}
 .wordmark strong span{opacity:.98}
 
 /* Nav */
@@ -70,8 +67,11 @@ body{
 .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn-white{background:#fff;color:#111;border-color:#e6e6e6}
 .btn-white:hover{transform:translateY(-1px)}
-.btn-outline{background:#121416;color:#fff}
-.btn-outline:hover{background:#171a1d}
+.btn-outline{background:#121416;color:#fff;border-color:#3a3d41}
+.btn-outline:hover{background:#171a1d;border-color:#4a4d52}
+
+/* Compact Enquire pill in header */
+.nav .nav-enquire{padding:8px 14px;border-radius:10px;font-weight:700;font-size:.95rem;box-shadow:none}
 
 /* HERO */
 .hero{background:var(--bg-2);border-bottom:1px solid var(--line)}
@@ -164,63 +164,37 @@ input:focus, textarea:focus{
 .faq summary::-webkit-details-marker{display:none}
 .faq details + details{margin-top:10px}
 
-/* Lightbox overlay (CSS-only) */
+/* Lightbox overlay */
 .lightbox {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.88);
-  z-index:999;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);
+  z-index:999;align-items:center;justify-content:center;padding:20px;
 }
 .lightbox:target {display:flex}
 .lightbox img {
-  max-width:92%;
-  max-height:92%;
-  border-radius:12px;
-  box-shadow:0 12px 40px rgba(0,0,0,.65);
+  max-width:92%;max-height:92%;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.65);
 }
 .lightbox .close {
-  position:absolute;top:20px;right:28px;
-  color:#fff;font-size:2.5rem;font-weight:bold;
-  text-decoration:none;line-height:1;
+  position:absolute;top:20px;right:28px;color:#fff;font-size:2.5rem;font-weight:bold;text-decoration:none;line-height:1;
 }
 .lightbox .close:hover {color:#ff4c4c}
 
-/* Compact Enquire button in header nav */
-.nav .btn-outline {
-  padding:6px 14px;
-  border-radius:8px;
-  font-weight:600;
-  font-size:0.95rem;
-  line-height:1.2;
-  border:1px solid #444;
-  background:#141414;
-  color:#fff;
-  box-shadow:none;
-  transition:background .2s ease, color .2s ease, border-color .2s ease;
-}
-.nav .btn-outline:hover {
-  background:#1e1e1e;
-  border-color:#555;
-  color:#fff;
-}
-
-/* Mobile call bar */
+/* Mobile call bar (hidden by default) */
+.callbar { display:none; }
 @media (max-width:720px){
-  .callbar{position:sticky;bottom:0;z-index:60;display:flex;gap:10px;
-    padding:10px;backdrop-filter:saturate(120%) blur(6px);
-    background:linear-gradient(180deg,rgba(0,0,0,.0),rgba(0,0,0,.55)) , #0b0b0b90}
-  .callbar .btn{flex:1;text-align:center}
-  body{padding-bottom:68px} /* space for bar */
+  .callbar{
+    display:flex; position:sticky; bottom:0; z-index:60; gap:10px;
+    padding:10px; backdrop-filter:saturate(120%) blur(6px);
+    background:linear-gradient(180deg,rgba(0,0,0,.0),rgba(0,0,0,.55)), #0b0b0b90;
+  }
+  .callbar .btn{
+    flex:1; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:12px; line-height:1.2;
+  }
+  body{padding-bottom:68px} /* reserve space for sticky bar */
 }
 
 /* Responsive */
-@media (max-width:1080px){
-  .gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-}
+@media (max-width:1080px){ .gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr))} }
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr}
   .hero-media{order:-1}
@@ -229,61 +203,17 @@ input:focus, textarea:focus{
   .grid-3{grid-template-columns:1fr 1fr}
   .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
-@media (max-width:740px){
-  .grid-3{grid-template-columns:1fr}
-}
+@media (max-width:740px){ .grid-3{grid-template-columns:1fr} }
 @media (max-width:540px){
-  .nav{display:none}
+  .nav{display:none}            /* keep header minimal on very small screens */
   .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
-/* Ensure anchor scrolls below sticky header */
-#page-top { position: relative; top: -80px; }          /* offset equals header height */
-:target { scroll-margin-top: 90px; }                   /* extra safety */
-
-/* Hide callbar by default; only show on small screens */
-.callbar { display: none; }                            /* NEW */
-@media (max-width:720px){
-  .callbar{
-    display:flex;                                      /* was implicit before */
-    position:sticky; bottom:0; z-index:60; gap:10px;
-    padding:10px; backdrop-filter:saturate(120%) blur(6px);
-    background:linear-gradient(180deg,rgba(0,0,0,.0),rgba(0,0,0,.55)), #0b0b0b90;
-  }
-  .callbar .btn{flex:1;text-align:center}
-  body{padding-bottom:68px}
-}
-
+/* Anchor offset below sticky header */
+#page-top { position:relative; top:calc(var(--header-h) * -1); }
+:target { scroll-margin-top: calc(var(--header-h) + 10px); }
 
 /* Motion safety */
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
 }
-
-/* Ensure anchor scrolls below sticky header */
-#page-top { position: relative; top: -80px; }          /* offset equals header height */
-:target { scroll-margin-top: 90px; }                   /* extra safety */
-
-/* Hide callbar by default; only show on small screens */
-.callbar { display: none; }                            /* NEW */
-@media (max-width:720px){
-  .callbar{
-    display:flex;                                      /* was implicit before */
-    position:sticky; bottom:0; z-index:60; gap:10px;
-    padding:10px; backdrop-filter:saturate(120%) blur(6px);
-    background:linear-gradient(180deg,rgba(0,0,0,.0),rgba(0,0,0,.55)), #0b0b0b90;
-  }
-  .callbar .btn{flex:1;text-align:center}
-  body{padding-bottom:68px}
-}
-
-.callbar .btn {
-  flex:1;
-  display:flex;              /* make the button a flexbox */
-  align-items:center;        /* vertical centering */
-  justify-content:center;    /* horizontal centering */
-  text-align:center;
-  padding:12px;              /* consistent padding */
-  line-height:1.2;           /* tighter line height */
-}
-
