@@ -203,16 +203,22 @@ input:focus, textarea:focus{
 }
 .lightbox .close:hover {color:#ff4c4c}
 
-/* Compact nav button style */
+/* Compact Enquire button in header nav */
 .nav .btn-outline {
-  padding:6px 14px;       /* smaller */
-  border-radius:8px;      /* not fully round */
+  padding:6px 14px;         /* slimmer than body buttons */
+  border-radius:8px;        /* slight rounding, not big pill */
   font-weight:600;
   font-size:0.95rem;
+  line-height:1.2;
   border:1px solid #444;
-  box-shadow:none;        /* remove heavy shadow */
   background:#141414;
+  color:#fff;
+  box-shadow:none;          /* remove heavy glow */
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
 }
+
 .nav .btn-outline:hover {
   background:#1e1e1e;
+  border-color:#555;
+  color:#fff;
 }
